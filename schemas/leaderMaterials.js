@@ -9,6 +9,12 @@ export default {
       type: "string",
     },
     {
+      name: 'keywords',
+      title: 'Keywords (used for search indexing)',
+      type: 'array',
+      of: [{ type: 'string' }],
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
