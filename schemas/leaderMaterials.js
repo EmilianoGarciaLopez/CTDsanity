@@ -9,21 +9,6 @@ export default {
       type: "string",
     },
     {
-      name: 'keywords',
-      title: 'Keywords (used for search indexing)',
-      type: 'array',
-      of: [{ type: 'string' }],
-    },
-    {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
-    },
-    {
       name: "mainImage",
       title: "Main image",
       type: "image",

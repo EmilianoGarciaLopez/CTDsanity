@@ -9,14 +9,8 @@ export default {
       type: 'string',
     },
     {
-      name: 'keywords',
-      title: 'Keywords (used for search indexing)',
-      type: 'array',
-      of: [{ type: 'string' }],
-    },
-    {
       name: 'subtitle',
-      title: 'Subtitle/Preview',
+      title: 'Subtitle/Description',
       type: 'string',
     },
     {
@@ -31,8 +25,8 @@ export default {
     {
       name: 'author',
       title: 'Author',
-      type: 'reference',
-      to: {type: 'authors'},
+      type: 'array',
+      of: [{type: 'reference', to : {type: 'authors'}}],
     },
     {
       name: 'mainImage',
