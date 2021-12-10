@@ -7,11 +7,22 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'SEODescription',
+      title: 'SEO Description',
+      type: 'string',
+      validation: Rule => [
+        Rule.required().min(60).error('SEO Description should be at least 60 characters long.'),
+        Rule.required().max(160).error('Cannot be longer than 160 characters.'),
+      ]
     },
     {
       name: 'subtitle',
       title: 'Subtitle/Description',
       type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       name: 'slug',
@@ -20,13 +31,16 @@ export default {
       options: {
         source: 'title',
         maxLength: 96,
+        required: true,
       },
+      validation: Rule => Rule.required()
     },
     {
       name: 'author',
       title: 'Author',
       type: 'array',
       of: [{type: 'reference', to : {type: 'authors'}}],
+      validation: Rule => Rule.required()
     },
     {
       name: 'mainImage',
@@ -35,6 +49,7 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: Rule => Rule.required()
     },
     {
       name: 'categories',
@@ -49,12 +64,14 @@ export default {
       options: {
         dateFormat: 'MMM. Do, YYYY',
         calendarTodayLabel: 'Today'
-      }
+      },
+      validation: Rule => Rule.required()
     },
     {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: Rule => Rule.required()
     },
   ],
 
