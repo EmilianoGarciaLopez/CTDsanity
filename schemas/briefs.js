@@ -10,7 +10,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "SEODescription",
+      name: "seoDescription",
       title: "SEO Description",
       type: "string",
       validation: (Rule) => [
