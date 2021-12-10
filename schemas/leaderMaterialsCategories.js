@@ -1,12 +1,12 @@
 export default {
-  name: 'leaderMaterialsCategories',
-  title: 'Leader Materials Categories',
-  type: 'document',
+  name: "leaderMaterialsCategories",
+  title: "Leader Materials Categories",
+  type: "document",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
   ],
-}
+};

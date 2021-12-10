@@ -1,91 +1,93 @@
 export default {
-  name: 'briefs',
-  title: 'Briefs',
-  type: 'document',
+  name: "briefs",
+  title: "Briefs",
+  type: "document",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      validation: Rule => Rule.required()
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'SEODescription',
-      title: 'SEO Description',
-      type: 'string',
-      validation: Rule => [
-        Rule.required().min(60).error('SEO Description should be at least 60 characters long.'),
-        Rule.required().max(160).error('Cannot be longer than 160 characters.'),
-      ]
+      name: "SEODescription",
+      title: "SEO Description",
+      type: "string",
+      validation: (Rule) => [
+        Rule.required()
+          .min(60)
+          .error("SEO Description should be at least 60 characters long."),
+        Rule.required().max(160).error("Cannot be longer than 160 characters."),
+      ],
     },
     {
-      name: 'subtitle',
-      title: 'Subtitle/Description',
-      type: 'string',
-      validation: Rule => Rule.required()
+      name: "subtitle",
+      title: "Subtitle/Description",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       options: {
-        source: 'title',
+        source: "title",
         maxLength: 96,
         required: true,
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'array',
-      of: [{type: 'reference', to : {type: 'authors'}}],
-      validation: Rule => Rule.required()
+      name: "author",
+      title: "Author",
+      type: "array",
+      of: [{ type: "reference", to: { type: "authors" } }],
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
       options: {
         hotspot: true,
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'briefsCategories'}}],
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "briefsCategories" } }],
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'date',
+      name: "publishedAt",
+      title: "Published at",
+      type: "date",
       options: {
-        dateFormat: 'MMM. Do, YYYY',
-        calendarTodayLabel: 'Today'
+        dateFormat: "MMM. Do, YYYY",
+        calendarTodayLabel: "Today",
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-      validation: Rule => Rule.required()
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+      validation: (Rule) => Rule.required(),
     },
   ],
 
   preview: {
     select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
+      title: "title",
+      author: "author.name",
+      media: "mainImage",
     },
     prepare(selection) {
-      const {author} = selection
+      const { author } = selection;
       return Object.assign({}, selection, {
         subtitle: author && `by ${author}`,
-      })
+      });
     },
   },
-}
+};

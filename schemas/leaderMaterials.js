@@ -17,13 +17,15 @@ export default {
       },
     },
     {
-      name: 'SEODescription',
-      title: 'SEO Description',
-      type: 'string',
-      validation: Rule => [
-        Rule.required().min(60).error('SEO Description should be at least 60 characters long.'),
-        Rule.required().max(160).error('Cannot be longer than 160 characters.'),
-      ]
+      name: "SEODescription",
+      title: "SEO Description",
+      type: "string",
+      validation: (Rule) => [
+        Rule.required()
+          .min(60)
+          .error("SEO Description should be at least 60 characters long."),
+        Rule.required().max(160).error("Cannot be longer than 160 characters."),
+      ],
     },
     {
       name: "categories",
