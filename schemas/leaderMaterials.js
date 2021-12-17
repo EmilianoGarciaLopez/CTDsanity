@@ -22,7 +22,7 @@ export default {
       type: "string",
       validation: (Rule) => [
         Rule.required()
-          .min(60)
+          .min(100)
           .error("SEO Description should be at least 60 characters long."),
         Rule.required().max(160).error("Cannot be longer than 160 characters."),
       ],
