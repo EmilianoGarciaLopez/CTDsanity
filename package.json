@@ -2,7 +2,7 @@
   "name": "ctd",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "A Sanity.io schema for the Crossing the Divide website",
   "main": "package.json",
   "author": "Emiliano Garcia <emilianogarcialopez26@gmail.com>",
   "license": "UNLICENSED",
