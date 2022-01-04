@@ -20,14 +20,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "mainImage",
-      title: "Main image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
       name: "SEODescription",
       title: "SEO Description",
       type: "string",
