@@ -9,6 +9,23 @@ export default {
       type: "string",
     },
     {
+      name: "SEODescription",
+      title: "SEO Description",
+      type: "string",
+      validation: (Rule) => [
+        Rule.required()
+          .min(100)
+          .error("SEO Description should be at least 60 characters long."),
+        Rule.required().max(160).error("Cannot be longer than 160 characters."),
+      ],
+    },
+    {
+      name: "subtitle",
+      title: "Subtitle/Description",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -20,15 +37,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "SEODescription",
-      title: "SEO Description",
-      type: "string",
-      validation: (Rule) => [
-        Rule.required()
-          .min(100)
-          .error("SEO Description should be at least 60 characters long."),
-        Rule.required().max(160).error("Cannot be longer than 160 characters."),
-      ],
+      name: "author",
+      title: "Author",
+      type: "array",
+      of: [{ type: "reference", to: { type: "authors" } }],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "categories",
@@ -55,6 +68,13 @@ export default {
   preview: {
     select: {
       title: "title",
+      author: "author.name",
+    },
+    prepare(selection) {
+      const { author } = selection;
+      return Object.assign({}, selection, {
+        subtitle: author && `by ${author}`,
+      });
     },
   },
 };
