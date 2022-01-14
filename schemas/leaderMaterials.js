@@ -9,7 +9,7 @@ export default {
       type: "string",
     },
     {
-      name: "SEODescription",
+      name: "seoDescription",
       title: "SEO Description",
       type: "string",
       validation: (Rule) => [
