@@ -7,6 +7,19 @@ export default {
       name: "name",
       title: "Name",
       type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "position",
+      title: "Position",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "rank",
+      title: "Rank",
+      type: "number",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",
@@ -16,6 +29,7 @@ export default {
         source: "name",
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "image",
@@ -28,14 +42,12 @@ export default {
     {
       name: "bio",
       title: "Bio",
-      type: "array",
-      of: [
-        {
-          title: "Block",
-          type: "block",
-          styles: [{ title: "Normal", value: "normal" }],
-          lists: [],
-        },
+      type: "string",
+      validation: (Rule) => [
+        Rule.required()
+          .min(100)
+          .error("Bio should be at least 100 characters long."),
+        Rule.required().max(370).error("Cannot be longer than 370 characters."),
       ],
     },
   ],
