@@ -7,19 +7,13 @@ export default {
       name: "name",
       title: "Name",
       type: "string",
-    },
-    {
-      name: "image",
-      title: "Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "school",
       title: "School",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
