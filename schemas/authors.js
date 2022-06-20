@@ -45,9 +45,9 @@ export default {
       type: "string",
       validation: (Rule) => [
         Rule.required()
-          .min(100)
+          .min(250)
           .error("Bio should be at least 100 characters long."),
-        Rule.required().max(370).error("Cannot be longer than 370 characters."),
+        Rule.required().max(320).error("Cannot be longer than 320 characters."),
       ],
     },
   ],
