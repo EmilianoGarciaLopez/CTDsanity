@@ -1,7 +1,10 @@
+import { AiOutlineTeam } from "react-icons/ai";
+
 export default {
   name: "authors",
   title: "Authors",
   type: "document",
+  icon: AiOutlineTeam,
   fields: [
     {
       name: "name",

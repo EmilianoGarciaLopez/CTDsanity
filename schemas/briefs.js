@@ -1,7 +1,10 @@
+import { FcDocument } from "react-icons/fc";
+
 export default {
   name: "briefs",
   title: "Briefs",
   type: "document",
+  icon: FcDocument,
   fields: [
     {
       name: "title",

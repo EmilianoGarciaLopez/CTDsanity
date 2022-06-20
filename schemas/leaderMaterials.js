@@ -1,7 +1,10 @@
+import { ImBooks } from "react-icons/im";
+
 export default {
   name: "leaderMaterials",
   title: "Leader Materials",
   type: "document",
+  icon: ImBooks,
   fields: [
     {
       name: "title",

@@ -1,7 +1,10 @@
+import { BsFillPersonBadgeFill } from "react-icons/bs";
+
 export default {
   name: "branchLeaders",
   title: "Branch Leaders",
   type: "document",
+  icon: BsFillPersonBadgeFill,
   fields: [
     {
       name: "name",
