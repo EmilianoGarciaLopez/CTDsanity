@@ -14,10 +14,11 @@ export default {
     {
       name: "seoDescription",
       title: "SEO Description",
-      type: "string",
+      type: "text",
+      rows: 2,
       validation: (Rule) => [
         Rule.required()
-          .min(100)
+          .min(60)
           .error("SEO Description should be at least 60 characters long."),
         Rule.required().max(160).error("Cannot be longer than 160 characters."),
       ],
@@ -25,7 +26,8 @@ export default {
     {
       name: "subtitle",
       title: "Subtitle/Description",
-      type: "string",
+      type: "text",
+      rows: 2,
       validation: (Rule) => Rule.required(),
     },
     {

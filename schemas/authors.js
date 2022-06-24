@@ -45,7 +45,8 @@ export default {
     {
       name: "bio",
       title: "Bio",
-      type: "string",
+      type: "text",
+      rows: 5,
       validation: (Rule) => [
         Rule.required()
           .min(100)

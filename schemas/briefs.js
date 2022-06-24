@@ -15,7 +15,8 @@ export default {
     {
       name: "seoDescription",
       title: "SEO Description",
-      type: "string",
+      type: "text",
+      rows: 2,
       validation: (Rule) => [
         Rule.required()
           .min(60)
@@ -26,7 +27,8 @@ export default {
     {
       name: "subtitle",
       title: "Subtitle/Description",
-      type: "string",
+      type: "text",
+      rows: 2,
       validation: (Rule) => Rule.required(),
     },
     {
