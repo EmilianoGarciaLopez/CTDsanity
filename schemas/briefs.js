@@ -59,6 +59,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "image_attribution",
+      title: "Image Attribution",
+      type: "string",
+      initialValue: "Unsplash",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "categories",
       title: "Categories",
       type: "array",
