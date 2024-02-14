@@ -5,3 +5,7 @@ yarn.lock
 
 .idea
 .vscode
+
+# Sanity temp folders
+.sanity
+
